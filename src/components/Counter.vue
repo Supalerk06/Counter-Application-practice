@@ -50,6 +50,7 @@ function undo() {
   count.value = history.value.pop()
   }
 }
+
 </script>
 
 <template>
@@ -62,8 +63,8 @@ function undo() {
     <div class="count">{{ count }}</div>
 
     <div class="row">
-      <button class="btn inc" @click="increment">Increase</button>
-      <button class="btn dec" @click="decrement">Decrease</button>
+      <button class="btn inc" @click="increment" :disabled="count === max">Increase</button>
+      <button class="btn dec" @click="decrement" :disabled="count === 0">Decrease</button>
     </div>
 
     <div class="row">
